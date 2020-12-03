@@ -9,7 +9,7 @@ public class FCO_SpecificObjectScript : MonoBehaviour
 
     public bool burnable = false;
 
-    public void UseBehaviour()
+    public void UseBehaviour(GameObject touchedObject)
     {
         switch (type)
         {
