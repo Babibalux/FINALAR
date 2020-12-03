@@ -11,12 +11,17 @@ public class FCO_GlobalObjectScript : MonoBehaviour
     Collider collide;
     FCO_SpecificObjectScript specific;
     public bool canDoInteraction = false;
-    bool isInTheHand = true;
+    bool isInTheHand = false;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         collide = GetComponentInChildren<Collider>();
+        if(GetComponent<FCO_SpecificObjectScript>())
+        {
+            canDoInteraction = true;
+        }
+
 
         if(canDoInteraction && GetComponent<FCO_SpecificObjectScript>() != null)
         {
@@ -24,24 +29,25 @@ public class FCO_GlobalObjectScript : MonoBehaviour
         }
     }
 
-    public void UseTheObject()
+    public void UseTheObject(GameObject touchedObject)
     {
         if(canDoInteraction && isInTheHand)
         {
-            specific.UseBehaviour();
+            specific.UseBehaviour(touchedObject);
         }
     }
 
     public void TakeTheObject()
     {
         isInTheHand = true;
-        Instantiate(this.gameObject, hand.transform).GetComponent<FCO_GlobalObjectScript>().isInTheHand = true;
-        Destroy(this.gameObject);
+        transform.SetParent(hand.transform);
+        transform.localPosition = new Vector3(0, 0, 0);
     }
 
     public void PlaceTheObject(Pose destination)
     {
-        Instantiate(this.gameObject, destination.position, destination.rotation).GetComponent<FCO_GlobalObjectScript>().isInTheHand = false;
-        Destroy(this.gameObject);
+        transform.SetParent(null);
+        isInTheHand = false;
+        transform.SetPositionAndRotation(destination.position, destination.rotation);
     }
 }
