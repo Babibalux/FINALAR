@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Emplacement
+  - Hand
+  - Item
   - Cursor
   - Board
   layers:
@@ -17,6 +19,7 @@ TagManager:
   - 
   - 
   - Interact
+  - Brazero
   - Plane
   - 
   - 

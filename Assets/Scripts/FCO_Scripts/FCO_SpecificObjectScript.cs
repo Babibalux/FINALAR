@@ -8,6 +8,8 @@ public class FCO_SpecificObjectScript : MonoBehaviour
     public ItemType type;
 
     public bool burnable = false;
+    [System.NonSerialized] public bool burned = false;
+    public Material burnedMaterial;
 
     public void UseBehaviour(GameObject touchedObject)
     {
@@ -15,6 +17,20 @@ public class FCO_SpecificObjectScript : MonoBehaviour
         {
             case ItemType.Ingredient:
                 {
+                    if(touchedObject.GetComponent<FCO_Brazero>() != null && burnable && !GetComponent<FCO_IAmABuche>() && !burned)
+                    {
+                        burned = true;
+                        GetComponent<MeshRenderer>().material = GetComponent<FCO_SpecificObjectScript>().burnedMaterial;
+                    }
+                    else if (touchedObject.GetComponent<FCO_Brazero>() != null && burnable && GetComponent<FCO_IAmABuche>() && !burned)
+                    {
+
+                        GetComponent<FCO_IAmABuche>().burned = true;
+                        GetComponent<FCO_SpecificObjectScript>().burned = true;
+                        gameObject.GetComponent<MeshRenderer>().material = GetComponent<FCO_SpecificObjectScript>().burnedMaterial;
+
+                        GetComponent<MeshFilter>().mesh = GetComponent<FCO_IAmABuche>().cendre3D;
+                    }
 
                     break;
                 }
