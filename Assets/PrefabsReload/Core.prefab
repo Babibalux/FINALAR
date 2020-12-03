@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &865602834234380886
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4049445906975314354}
+  m_Layer: 0
+  m_Name: hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4049445906975314354
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865602834234380886}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 49.6, y: -45, z: 92}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2795297240503041629}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5134395354363939424
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,6 +157,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8160291744691751035}
     m_Modifications:
+    - target: {fileID: 3788707308845603353, guid: 00bbb1266303331469307f5a1d548f9e,
+        type: 3}
+      propertyPath: handObject
+      value: 
+      objectReference: {fileID: 865602834234380886}
+    - target: {fileID: 3788707308845603353, guid: 00bbb1266303331469307f5a1d548f9e,
+        type: 3}
+      propertyPath: interactScript
+      value: 
+      objectReference: {fileID: 1277629593486413524}
+    - target: {fileID: 3788707308845603353, guid: 00bbb1266303331469307f5a1d548f9e,
+        type: 3}
+      propertyPath: hand
+      value: 
+      objectReference: {fileID: 865602834234380886}
     - target: {fileID: 8565682664303491460, guid: 00bbb1266303331469307f5a1d548f9e,
         type: 3}
       propertyPath: m_Name
@@ -197,6 +242,11 @@ PrefabInstance:
       propertyPath: planeManager
       value: 
       objectReference: {fileID: 2795297240968337079}
+    - target: {fileID: 8565682664303491467, guid: 00bbb1266303331469307f5a1d548f9e,
+        type: 3}
+      propertyPath: ARDefaultPlane
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00bbb1266303331469307f5a1d548f9e, type: 3}
 --- !u!4 &1277629593486413525 stripped
@@ -205,6 +255,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7450192214049634143}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1277629593486413524 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8565682664303491467, guid: 00bbb1266303331469307f5a1d548f9e,
+    type: 3}
+  m_PrefabInstance: {fileID: 7450192214049634143}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59a9a9d1470671f40839c6c1be71983a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7762371890710039548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -282,6 +344,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5580971610505207115, guid: e036376a20470534ea7cf30380442909,
+        type: 3}
+      propertyPath: m_PlanePrefab
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5580971610505207115, guid: e036376a20470534ea7cf30380442909,
+        type: 3}
+      propertyPath: m_DetectionMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5580971610505207119, guid: e036376a20470534ea7cf30380442909,
         type: 3}
       propertyPath: m_Name
@@ -307,6 +379,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1760703bbd54c04488a8d10600262ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &2795297240503041629 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5580971610039383457, guid: e036376a20470534ea7cf30380442909,
+    type: 3}
+  m_PrefabInstance: {fileID: 7762371890710039548}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8944372059231170520
 PrefabInstance:
   m_ObjectHideFlags: 0
