@@ -2,14 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
+using UnityEngine.XR.ARSubsystems;
 using UnityEngine.Experimental.XR;
 using System;
 
 public class AddObjectToPosition : MonoBehaviour
 {
+    public GameObject boardgame;
     public GameObject objectToPlace;
-    public GameObject objectToPlace2;
     public GameObject placementIndicator;
+
+    private bool terrainIsPlaced;
+
+    public LayerMask PlaneLayer;
 
     private ARRaycastManager arRaycastManager;
     private Pose placementPose;
@@ -27,20 +32,35 @@ public class AddObjectToPosition : MonoBehaviour
 
     void Update()
     {
-        UpdatePlacementPose();
+        if (!terrainIsPlaced) UpdatePlacementPoseStart();
+        else UpdatePlacementDuringGame();
         UpdatePlacementIndicator();
 
-        isTouchingEmplacement = cursorScript.cursorTouchEmplacement;
+        isTouchingEmplacement = cursorScript.cursorTouchEmplacement; //c'est au cas où il touche un objet mais oklm
+
+
 
         if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
-            PlaceObject();
+            if (!terrainIsPlaced)
+            {
+                PlaceObject();
+                terrainIsPlaced = true;
+            }
+            else
+            {
+                PlaceObject();
+            }
         }
+
+
     }
 
     private void PlaceObject()
     {
-        if (isTouchingEmplacement) Instantiate(objectToPlace2, cursorScript.touchedObject.transform.position, placementPose.rotation);
+        if(!terrainIsPlaced) Instantiate(boardgame, placementPose.position, placementPose.rotation);
+
+        if (isTouchingEmplacement) Instantiate(objectToPlace, cursorScript.touchedObject.transform.position, placementPose.rotation);
         else Instantiate(objectToPlace, placementPose.position, placementPose.rotation);
     }
 
@@ -57,11 +77,11 @@ public class AddObjectToPosition : MonoBehaviour
         }
     }
 
-    private void UpdatePlacementPose()
+    private void UpdatePlacementPoseStart()
     {
         var screenCenter = Camera.current.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
         var hits = new List<ARRaycastHit>();
-        arRaycastManager.Raycast(screenCenter, hits, UnityEngine.XR.ARSubsystems.TrackableType.Planes);
+        arRaycastManager.Raycast(screenCenter, hits, TrackableType.Planes);
 
         placementPoseIsValid = hits.Count > 0;
         if (placementPoseIsValid)
@@ -73,4 +93,24 @@ public class AddObjectToPosition : MonoBehaviour
             placementPose.rotation = Quaternion.LookRotation(cameraBearing);
         }
     }
+
+    private void UpdatePlacementDuringGame()
+    {
+        RaycastHit raycast;
+        Ray ray = Camera.current.ScreenPointToRay(new Vector2(Screen.width/2, Screen.height/2));
+        if (Physics.Raycast(ray, out raycast, 100, PlaneLayer))
+        {
+            placementPoseIsValid = true;
+            placementPose.position = raycast.point;
+            var cameraForward = Camera.current.transform.forward;
+            var cameraBearing = new Vector3(cameraForward.x, 0, cameraForward.z).normalized;
+            placementPose.rotation = Quaternion.LookRotation(cameraBearing);
+        }
+        else placementPoseIsValid = false;
+        
+
+
+    }
+
+    
 }
