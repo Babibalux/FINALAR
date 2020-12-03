@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59a9a9d1470671f40839c6c1be71983a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boardgame: {fileID: 8907029765541164079, guid: ea79dcfde587ac94990f5c688e0a51c7,
+  boardgame: {fileID: 2025664210081937934, guid: ac4003ed43912b84cad212d36965926c,
     type: 3}
   objectToPlace: {fileID: 1994296391758012297, guid: 304c2f944caa6e84695c8542199e4906,
     type: 3}
