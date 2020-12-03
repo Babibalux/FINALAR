@@ -12,11 +12,16 @@ public class AddObjectToPosition : MonoBehaviour
     public GameObject objectToPlace;
     public GameObject placementIndicator;
 
+    private GameObject TouchedGameobject;
+
     public ARPlaneManager planeManager;
+
+    private Vector3 touchPosition;
 
     private bool terrainIsPlaced;
 
     public LayerMask PlaneLayer;
+    public LayerMask InteractibleLayer;
 
     private ARRaycastManager arRaycastManager;
     private Pose placementPose;
@@ -42,21 +47,24 @@ public class AddObjectToPosition : MonoBehaviour
 
 
 
-        if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
-            if (!terrainIsPlaced)
+            touchPosition = Input.touches[0].position;
+
+            if (placementPoseIsValid && TouchDetection(touchPosition) == null)
             {
-                PlaceObject();
-                terrainIsPlaced = true;
-                planeManager.enabled = false;
-            }
-            else
-            {
-                PlaceObject();
+                if (!terrainIsPlaced)
+                {
+                    PlaceObject();
+                    terrainIsPlaced = true;
+                    planeManager.enabled = false;
+                }
+                else
+                {
+                    PlaceObject();
+                }
             }
         }
-
-
     }
 
     private void PlaceObject()
@@ -110,10 +118,19 @@ public class AddObjectToPosition : MonoBehaviour
             placementPose.rotation = Quaternion.LookRotation(cameraBearing);
         }
         else placementPoseIsValid = false;
-        
-
-
     }
 
-    
+    private GameObject TouchDetection(Vector3 TouchedScreenPosition)
+    {
+        RaycastHit raycast;
+        Ray ray = Camera.current.ScreenPointToRay(TouchedScreenPosition);
+
+        if(Physics.Raycast(ray, out raycast, 100, InteractibleLayer))
+        {
+            return raycast.collider.gameObject;
+        }
+        else return null;
+    }
+
+
 }
