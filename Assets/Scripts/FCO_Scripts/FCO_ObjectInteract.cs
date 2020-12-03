@@ -22,33 +22,33 @@ public class FCO_ObjectInteract : MonoBehaviour
 
     void Update()
     {
-        if(GetComponentInChildren<FCO_GlobalObjectScript>() != null)
+        if(hand.transform.childCount >= 2)
         {
             if(Input.GetTouch(0).phase == TouchPhase.Began && Input.touchCount > 0)
             {
-                GameObject touchedObject = TouchRaycast(cam.ScreenToWorldPoint(Input.GetTouch(0).position), interact).collider.gameObject;
+                
 
-                if (touchedObject != GetComponentInChildren<FCO_GlobalObjectScript>().gameObject && hand.GetComponentInChildren<FCO_SpecificObjectScript>() == true)
+                if (hand.GetComponentInChildren<FCO_SpecificObjectScript>() == true)
                 {
-                    hand.GetComponentInChildren<FCO_GlobalObjectScript>().UseTheObject(touchedObject);
-                }
+                    GameObject touchedObject = TouchRaycast(Input.GetTouch(0).position, interact).collider.gameObject;
 
+                    if(touchedObject != null && !touchedObject.GetComponentInChildren<FCO_GlobalObjectScript>()) hand.GetComponentInChildren<FCO_GlobalObjectScript>().UseTheObject(touchedObject);
+                }               
 
-                GameObject touchedBrazero = TouchRaycast(cam.ScreenToWorldPoint(Input.GetTouch(0).position), brazero).collider.gameObject;
-
-                if (touchedBrazero != null && hand.GetComponentInChildren<FCO_SpecificObjectScript>() == true)
+                if (hand.GetComponentInChildren<FCO_SpecificObjectScript>() == true)
                 {
-                    hand.GetComponentInChildren<FCO_GlobalObjectScript>().UseTheObject(touchedBrazero);
+                    GameObject touchedBrazero = TouchRaycast(Input.GetTouch(0).position, brazero).collider.gameObject;
+
+                    if (touchedBrazero != null) hand.GetComponentInChildren<FCO_GlobalObjectScript>().UseTheObject(touchedBrazero);
                 }
             }
         }
-        else if(hand.GetComponentInChildren<FCO_GlobalObjectScript>() == null)
+        else
         {
-            Collider touchedObject = TouchRaycast(cam.ScreenToWorldPoint(Input.GetTouch(0).position), interact).collider;
-
-            if (Input.GetTouch(0).phase == TouchPhase.Began && Input.touchCount > 0 && touchedObject != null)
+            if (Input.GetTouch(0).phase == TouchPhase.Began && Input.touchCount > 0)
             {
-                TouchRaycast(cam.ScreenToWorldPoint(Input.GetTouch(0).position), interact).collider.GetComponent<FCO_GlobalObjectScript>().TakeTheObject();
+                Collider touchedObject = TouchRaycast(Input.GetTouch(0).position, interact).collider;
+                if (touchedObject != null) touchedObject.GetComponent<FCO_GlobalObjectScript>().TakeTheObject();
             }
         }
     }
@@ -63,7 +63,7 @@ public class FCO_ObjectInteract : MonoBehaviour
 
     public RaycastHit TouchRaycast(Vector3 touchPosition, LayerMask layerMask)
     {
-        Ray ray = cam.ScreenPointToRay(touchPosition);
+        Ray ray = Camera.current.ScreenPointToRay(touchPosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
         {
@@ -72,6 +72,6 @@ public class FCO_ObjectInteract : MonoBehaviour
         else
         {
             return hit;
-        }        
+        }
     }
 }
