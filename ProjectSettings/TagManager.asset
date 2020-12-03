@@ -5,8 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Emplacement
-  tags:
-  - Hand
+  - Cursor
   layers:
   - Default
   - TransparentFX
