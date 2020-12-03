@@ -12,6 +12,8 @@ public class AddObjectToPosition : MonoBehaviour
     public GameObject objectToPlace;
     public GameObject placementIndicator;
 
+    public ARPlaneManager planeManager;
+
     private bool terrainIsPlaced;
 
     public LayerMask PlaneLayer;
@@ -46,6 +48,7 @@ public class AddObjectToPosition : MonoBehaviour
             {
                 PlaceObject();
                 terrainIsPlaced = true;
+                planeManager.enabled = false;
             }
             else
             {
