@@ -6,32 +6,56 @@ public class HDO_RoutePentacle : MonoBehaviour
 {
     ParticleSystem particles;
     public HDO_Dessinage dessinage;
-    Collider box;
-    Rigidbody rb;
+    public List<HDO_DetectRoutePentacle> route = null;
+    public List<HDO_DetectRoutePentacle> chemin = null;
+    int nextPoint;
+    int iteration;
+    bool pentacleFail = false;
 
     // Start is called before the first frame update
     void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-        box = GetComponent<Collider>();
+    {        
         particles = GetComponent<ParticleSystem>();
         particles.Stop();
+        dessinage = GameObject.Find("dessinage").GetComponent<HDO_Dessinage>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        DecideRouteOK();
     }
 
-    private void OnTriggerEnter(Collider other)
+    void DecideRouteOK()
     {
-        if(other.tag == "Cursor")
+        foreach(HDO_DetectRoutePentacle point in route)
         {
-            if (dessinage.dessinage && dessinage.trail.emitting)
+            if(iteration > 4)
             {
-                particles.Play();
+                iteration = 0;
             }
+            if (point.detected)
+            {
+                chemin.Add(point);
+                if(route[nextPoint] != route[iteration])
+                {
+                    pentacleFail = true;
+                    iteration = -1;
+                }
+                else
+                {
+                    nextPoint = iteration + 1;
+                }
+                point.detected = false;
+
+            }
+            iteration++;
+        }
+
+        if(chemin.Count >= 5)
+        {
+            dessinage.dessinage = false;
+            particles.Play();
         }
     }
 }
