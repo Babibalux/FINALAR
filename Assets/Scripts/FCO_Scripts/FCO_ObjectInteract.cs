@@ -10,18 +10,14 @@ public class FCO_ObjectInteract : MonoBehaviour
     public GameObject hand;
     public GameObject cursor;
     public LayerMask interact;
-    public float touchRange;
+    public LayerMask brazero;
 
     Camera cam;
-    Vector2 objectInHandTouchMin;
-    Vector2 objectInHandTouchMax;
-    private ARRaycastManager arRaycastManager;
 
     void Start()
     {
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         hand = GameObject.FindGameObjectWithTag("Hand");
-        arRaycastManager = FindObjectOfType<ARRaycastManager>();
     }
 
     void Update()
@@ -35,6 +31,14 @@ public class FCO_ObjectInteract : MonoBehaviour
                 if (touchedObject != GetComponentInChildren<FCO_GlobalObjectScript>().gameObject && hand.GetComponentInChildren<FCO_SpecificObjectScript>() == true)
                 {
                     hand.GetComponentInChildren<FCO_GlobalObjectScript>().UseTheObject(touchedObject);
+                }
+
+
+                GameObject touchedBrazero = TouchRaycast(cam.ScreenToWorldPoint(Input.GetTouch(0).position), brazero).collider.gameObject;
+
+                if (touchedBrazero != null && hand.GetComponentInChildren<FCO_SpecificObjectScript>() == true)
+                {
+                    hand.GetComponentInChildren<FCO_GlobalObjectScript>().UseTheObject(touchedBrazero);
                 }
             }
         }
@@ -61,7 +65,7 @@ public class FCO_ObjectInteract : MonoBehaviour
     {
         Ray ray = cam.ScreenPointToRay(touchPosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit,touchRange, layerMask))
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
         {
             return hit;
         }
