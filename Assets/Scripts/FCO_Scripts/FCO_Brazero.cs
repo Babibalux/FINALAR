@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FCO_Brazero : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if(other.CompareTag("Item") && other.GetComponent<FCO_IAmABuche>() && !other.GetComponent<FCO_IAmABuche>().burned)
         {
