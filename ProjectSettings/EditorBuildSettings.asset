@@ -8,9 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/HDO_Scene.unity
     guid: c2d125aa75df12e419892ac782091927
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FusionQuiMarcheTropBien.unity
     guid: 328a12ebe8837de42a46dd34c1f35d4f
+  - enabled: 0
+    path: "Assets/Scenes/F\xE9lix.unity"
+    guid: c21fcf0792e2545409cecd30dbe9a40a
+  - enabled: 1
+    path: Assets/Scenes/ELC_scene.unity
+    guid: dff4a6e4541398a4d916f00d8c09a625
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 8e6e3c772bf48814d82430508118e5da,
       type: 2}
