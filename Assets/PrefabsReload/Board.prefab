@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7213baf06853ebf49b7f85861dbda1ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ps: {fileID: 9099789699080240855}
   objectsPlacements:
   - {fileID: 7154120478647855888}
   - {fileID: 1426432542606630281}
@@ -127,11 +128,11 @@ MonoBehaviour:
   - Cendres
   - 
   candlesTagOrder:
-  - White Candle
-  - Red Candle
-  - Black Candle
-  - Green Candle
-  - Purple Candle
+  - WhiteCandle
+  - RedCandle
+  - BlackCandle
+  - GreenCandle
+  - PurpleCandle
 --- !u!114 &6485694054310188046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6607,17 +6608,17 @@ PrefabInstance:
     - target: {fileID: 7612706179822846171, guid: 4230ccb1a00f70c46aaf22a8ab58027b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.4104704
+      value: -1.54
       objectReference: {fileID: 0}
     - target: {fileID: 7612706179822846171, guid: 4230ccb1a00f70c46aaf22a8ab58027b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.24270606
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 7612706179822846171, guid: 4230ccb1a00f70c46aaf22a8ab58027b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.8412642
+      value: -3.03
       objectReference: {fileID: 0}
     - target: {fileID: 7612706179822846171, guid: 4230ccb1a00f70c46aaf22a8ab58027b,
         type: 3}

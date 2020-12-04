@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ELC_PlacementManager : MonoBehaviour
 {
+    public ParticleSystem ps;
+
     private int verifiedObjects;
     private int verifiedCandles;
 
@@ -34,7 +36,7 @@ public class ELC_PlacementManager : MonoBehaviour
 
         if(verifiedCandles >= 5)
         {
-            //Bougies vérifiées
+            ps.Play();
         }
 
         if(verifiedObjects >= 3)
