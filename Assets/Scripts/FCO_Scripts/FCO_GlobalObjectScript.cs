@@ -33,7 +33,7 @@ public class FCO_GlobalObjectScript : MonoBehaviour
     {
         if(canDoInteraction && isInTheHand)
         {
-            specific.UseBehaviour(touchedObject);
+            specific.UseBehaviour(touchedObject, this.gameObject);
         }
     }
 

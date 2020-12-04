@@ -9,6 +9,10 @@ TagManager:
   - Item
   - Cursor
   - Board
+  - Brasero
+  - Bol
+  - Mortier
+  - Puits
   layers:
   - Default
   - TransparentFX
@@ -21,7 +25,6 @@ TagManager:
   - Interact
   - Brazero
   - Plane
-  - 
   - 
   - 
   - 

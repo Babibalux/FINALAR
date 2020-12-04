@@ -301,9 +301,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5546e2eb154302147bdb49e935c2f4d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemSO: {fileID: 0}
   type: 0
-  burnable: 1
-  burnedMaterial: {fileID: 2100000, guid: 4996ca2f0c6a9c64e8e4c412a8baefbb, type: 2}
+  braseroTag: 
+  bolTag: 
+  mortierTag: 
+  puitsTag: 
 --- !u!114 &419621142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,9 +428,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5546e2eb154302147bdb49e935c2f4d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemSO: {fileID: 0}
   type: 0
-  burnable: 0
-  burnedMaterial: {fileID: 0}
+  braseroTag: Brasero
+  bolTag: Bol
+  mortierTag: Mortier
+  puitsTag: Puits
 --- !u!114 &427243111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1046,7 +1052,11 @@ MonoBehaviour:
     type: 3}
   objectToPlace: {fileID: 1570441067}
   placementIndicator: {fileID: 654255153}
+  planeManager: {fileID: 0}
   PlaneLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  InteractibleLayer:
     serializedVersion: 2
     m_Bits: 0
 --- !u!4 &1458398847
