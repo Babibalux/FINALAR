@@ -12,7 +12,7 @@ public class HDO_RoutePentacle : MonoBehaviour
     public List<GameObject> objectsToActivate = new List<GameObject>();
     int nextPointR, nextPointL;
     int iteration;
-    bool pentacleFail = false, checkPentacle = true, pentacleDone = false;
+    public bool pentacleFail = false, checkPentacle = true, pentacleDone = false;
 
     public bool GoodDessin;
 
@@ -64,10 +64,12 @@ public class HDO_RoutePentacle : MonoBehaviour
         }
         if (pentacleFail)
         {
+            dialogues.shouldWrite = true;
             dialogues.sequence = 4;
         }
         else
         {
+            dialogues.shouldWrite = true;
             dialogues.sequence = 3;
         }
         dessinage.dessinage = false;
