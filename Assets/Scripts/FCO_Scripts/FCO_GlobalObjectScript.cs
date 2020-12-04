@@ -88,7 +88,7 @@ public class FCO_GlobalObjectScript : MonoBehaviour
                     if (touchedObject.CompareTag(puitsTag))
                     {
                         hand.GetComponent<FCO_ContentementManagement>().contentement = touchedObject.GetComponent<FCO_Hole>().Offrande(GetComponent<FCO_Bol>().typeContenu, GetComponent<FCO_Bol>().etatContenu);
-                        hand.inHandObject.GetComponent<MeshRenderer>().material = itemSO.burnedVersion;
+                        //hand.inHandObject.GetComponent<MeshRenderer>().material = itemSO.burnedVersion;
                         hand.DestroyHandObject();
                     }
                     break;
