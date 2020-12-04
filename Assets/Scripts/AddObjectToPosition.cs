@@ -12,9 +12,16 @@ public class AddObjectToPosition : MonoBehaviour
     public GameObject objectToPlace;
     public GameObject placementIndicator;
 
+    public ARPlaneManager planeManager;
+    private ARAnchorManager AnchorManager;
+
+    private Vector3 touchPosition;
+    private GameObject touchedGameObject;
+
     private bool terrainIsPlaced;
 
     public LayerMask PlaneLayer;
+    public LayerMask InteractibleLayer;
 
     private ARRaycastManager arRaycastManager;
     private Pose placementPose;
@@ -22,12 +29,14 @@ public class AddObjectToPosition : MonoBehaviour
 
     private bool isTouchingEmplacement;
     private ELC_CursorProperties cursorScript;
+    private ELC_hand handScript;
 
     void Start()
     {
         arRaycastManager = FindObjectOfType<ARRaycastManager>();
         cursorScript = FindObjectOfType<ELC_CursorProperties>();
-
+        handScript = FindObjectOfType<ELC_hand>();
+        AnchorManager = FindObjectOfType<ARAnchorManager>();
     }
 
     void Update()
@@ -36,32 +45,69 @@ public class AddObjectToPosition : MonoBehaviour
         else UpdatePlacementDuringGame();
         UpdatePlacementIndicator();
 
-        isTouchingEmplacement = cursorScript.cursorTouchEmplacement; //c'est au cas où il touche un objet mais oklm
+        isTouchingEmplacement = cursorScript.cursorTouchEmplacement;
 
 
 
-        if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
-            if (!terrainIsPlaced)
+            touchPosition = Input.touches[0].position;
+            touchedGameObject = TouchDetection(touchPosition);
+
+            if (placementPoseIsValid)
             {
-                PlaceObject();
-                terrainIsPlaced = true;
+                if (touchedGameObject == null)
+                {
+                    if (!terrainIsPlaced)
+                    {
+                        SpawnObjectOnCursor(boardgame);
+                        terrainIsPlaced = true;
+                        planeManager.enabled = false;
+                        foreach (var plane in planeManager.trackables)
+                        {
+                            plane.gameObject.SetActive(false);
+                        }
+                    }
+                    //else
+                    //{
+                    //    SpawnObjectOnCursor(objectToPlace);
+                    //}
+                }
+
+                
             }
-            else
-            {
-                PlaceObject();
-            }
+            if (placementPoseIsValid && handScript.playerHoldSomething && touchPosition.x < Screen.width / 2 && touchPosition.y < Screen.height / 2) handScript.PutObjectOnGround();
+            else if (touchedGameObject != null && !handScript.playerHoldSomething && touchedGameObject != handScript.inHandObject) handScript.AddObjectToHand(touchedGameObject);
         }
-
-
     }
 
-    private void PlaceObject()
+    public void SpawnObjectOnCursor(GameObject GO)
     {
-        if(!terrainIsPlaced) Instantiate(boardgame, placementPose.position, placementPose.rotation);
+        if (!terrainIsPlaced)
+        {
+            GameObject boardGO = Instantiate(GO, placementPose.position, placementPose.rotation);
+            if(boardGO.GetComponent<ARAnchor>() == null) boardGO.AddComponent<ARAnchor>();
+        }
 
-        if (isTouchingEmplacement) Instantiate(objectToPlace, cursorScript.touchedObject.transform.position, placementPose.rotation);
-        else Instantiate(objectToPlace, placementPose.position, placementPose.rotation);
+        if (isTouchingEmplacement)
+        {
+            GameObject emplacementObject = Instantiate(GO, cursorScript.touchedObject.transform.position, placementPose.rotation);
+            if (emplacementObject.GetComponent<ARAnchor>() == null) emplacementObject.AddComponent<ARAnchor>();
+
+        }
+        else
+        {
+            GameObject newGO = Instantiate(GO, placementPose.position, placementPose.rotation);
+            if (newGO.GetComponent<ARAnchor>() == null) newGO.AddComponent<ARAnchor>();
+        }
+    }
+
+    public void PlaceObjectOnCursor(GameObject GO)
+    {
+        GO.transform.SetParent(null);
+        GO.transform.position = placementPose.position;
+        GO.transform.rotation = placementPose.rotation;
+        if (GO.GetComponent<ARAnchor>() == null) GO.AddComponent<ARAnchor>();
     }
 
     private void UpdatePlacementIndicator()
@@ -107,10 +153,21 @@ public class AddObjectToPosition : MonoBehaviour
             placementPose.rotation = Quaternion.LookRotation(cameraBearing);
         }
         else placementPoseIsValid = false;
-        
-
-
     }
 
-    
+    private GameObject TouchDetection(Vector3 TouchedScreenPosition)
+    {
+        RaycastHit raycast;
+        Ray ray = Camera.current.ScreenPointToRay(TouchedScreenPosition);
+
+        if(Physics.Raycast(ray, out raycast, 1000, InteractibleLayer))
+        {
+            return raycast.collider.gameObject;
+        }
+        else return null;
+    }
+
+
+
+
 }
