@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contentement: 0
+  demonBG: {fileID: 4513027326844639644, guid: 07c8ed5fb837ff04ebd2d1573e6e7c02, type: 3}
+  demimonde: {fileID: 0}
 --- !u!1 &1795033437597201842
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class HDO_RoutePentacle : MonoBehaviour
     public List<GameObject> objectsToActivate = new List<GameObject>();
     int nextPointR, nextPointL;
     int iteration;
-    bool pentacleFail = false, checkPentacle = true, pentacleDone = false;
+    public bool pentacleFail = false, checkPentacle = true, pentacleDone = false;
 
     public bool GoodDessin;
 
