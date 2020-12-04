@@ -51,4 +51,4 @@ MonoBehaviour:
     type: 3}
   PlaneLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1024
