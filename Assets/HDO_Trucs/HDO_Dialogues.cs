@@ -15,6 +15,9 @@ public class HDO_Dialogues : MonoBehaviour
 
     public List<string> introduction = null;
     public List<string> initialisation = null;
+    public List<string> espaceInvoqued = null;
+    public List<string> correctPentacle = null;
+    public List<string> ratedPentacle = null;
     
 
 
@@ -41,12 +44,17 @@ public class HDO_Dialogues : MonoBehaviour
         {
             usedList = initialisation;
         }
+        else if(sequence == 2)
+        {
+            usedList = espaceInvoqued;
+        }
     }
 
     public void ChangeDialogue()
     {
         if (sentenceNumber >= usedList.Count - 1)
         {
+            
             sequence += 1;
             Debug.Log("samer");
             sentenceNumber = -1;
