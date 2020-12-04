@@ -107,7 +107,8 @@ public class AddObjectToPosition : MonoBehaviour
     public void PlaceObjectOnCursor(GameObject GO)
     {
         GO.transform.SetParent(null);
-        GO.transform.position = placementPose.position;
+        if (isTouchingEmplacement) GO.transform.position = cursorScript.touchedObject.transform.position;
+        else GO.transform.position = placementPose.position;
         GO.transform.rotation = placementPose.rotation;
         if (GO.GetComponent<ARAnchor>() == null) GO.AddComponent<ARAnchor>();
     }
