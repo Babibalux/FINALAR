@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 700544130963389352}
   m_Layer: 8
   m_Name: Bowl High
-  m_TagString: Untagged
+  m_TagString: Bol
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
