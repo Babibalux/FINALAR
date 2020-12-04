@@ -66,10 +66,12 @@ public class HDO_RoutePentacle : MonoBehaviour
         }
         if (pentacleFail)
         {
+            dialogues.shouldWrite = true;
             dialogues.sequence = 4;
         }
         else
         {
+            dialogues.shouldWrite = true;
             dialogues.sequence = 3;
         }
         dessinage.dessinage = false;

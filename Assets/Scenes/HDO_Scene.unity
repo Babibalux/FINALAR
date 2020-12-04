@@ -538,6 +538,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
         type: 3}
+      propertyPath: zeGoodDemon.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
+        type: 3}
+      propertyPath: zeMocheDemon.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
+        type: 3}
       propertyPath: btn
       value: 
       objectReference: {fileID: 110427723}
@@ -641,6 +651,28 @@ PrefabInstance:
       propertyPath: ratedPentacle.Array.data[1]
       value: "Assez perdu de temps, je vais m'en charger moi-m\xEAme. Recule, et
         ne me d\xE9\xE7oit plus \xE0 l'avenir."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
+        type: 3}
+      propertyPath: zeGoodDemon.Array.data[0]
+      value: Enfin ! J'attendais cela depuis si longtemps !
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
+        type: 3}
+      propertyPath: zeGoodDemon.Array.data[1]
+      value: Je te remercie. Insecte.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
+        type: 3}
+      propertyPath: zeMocheDemon.Array.data[0]
+      value: Mais....Qu'as-tu fais vermine ?! Ce n'est pas le corps qu'il me fallait
+        !
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
+        type: 3}
+      propertyPath: zeMocheDemon.Array.data[1]
+      value: "Esp\xE8ce de traitre ! Attend un peu que je trouve un autre moyen de
+        r\xE9cup\xE9rer mes pouvoirs !"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 846e0d4bf9eae744c94ba4ba47776ff4, type: 3}
