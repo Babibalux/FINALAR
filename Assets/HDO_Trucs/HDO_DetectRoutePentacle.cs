@@ -6,7 +6,7 @@ public class HDO_DetectRoutePentacle : MonoBehaviour
 {
     public bool detected = false, hasDetected = false;
     HDO_Dessinage dessinage;
-    ParticleSystem particles;
+    //ParticleSystem particles;
     Collider box;
     Rigidbody rb;
     float waitStart = 2;
@@ -14,9 +14,9 @@ public class HDO_DetectRoutePentacle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dessinage = GameObject.Find("dessinage").GetComponent<HDO_Dessinage>();
-        particles = GetComponent<ParticleSystem>();
-        particles.Stop();
+        dessinage = GameObject.FindObjectOfType<HDO_Dessinage>();
+        //particles = GetComponent<ParticleSystem>();
+        //particles.Stop();
         box = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
     }
@@ -29,12 +29,11 @@ public class HDO_DetectRoutePentacle : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Cursor") && !hasDetected && dessinage.trail.emitting && waitStart <=0)
+        if (other.CompareTag("Cursor") && !hasDetected && dessinage.trail.emitting && waitStart <=0 && !hasDetected)
         {
             detected = true;
-            particles.Play();
+            //particles.Play();
             hasDetected = true;
-            box.enabled = false;
         }
     }
 }
