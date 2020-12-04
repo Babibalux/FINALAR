@@ -13,6 +13,11 @@ TagManager:
   - Bol
   - Mortier
   - Puits
+  - BlackCandle
+  - PurpleCandle
+  - RedCandle
+  - GreenCandle
+  - WhiteCandle
   layers:
   - Default
   - TransparentFX
