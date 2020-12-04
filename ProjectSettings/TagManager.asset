@@ -9,6 +9,15 @@ TagManager:
   - Item
   - Cursor
   - Board
+  - Brasero
+  - Bol
+  - Mortier
+  - Puits
+  - BlackCandle
+  - PurpleCandle
+  - RedCandle
+  - GreenCandle
+  - WhiteCandle
   layers:
   - Default
   - TransparentFX
@@ -21,7 +30,6 @@ TagManager:
   - Interact
   - Brazero
   - Plane
-  - 
   - 
   - 
   - 

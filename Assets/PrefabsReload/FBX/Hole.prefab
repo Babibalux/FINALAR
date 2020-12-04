@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 1789807578202834033}
   - component: {fileID: 3469177947768778927}
   - component: {fileID: 1835182347844218167}
-  m_Layer: 0
+  - component: {fileID: 832204504}
+  m_Layer: 8
   m_Name: Hole
-  m_TagString: Untagged
+  m_TagString: Puits
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1835182347844218168}
-  m_LocalRotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
-  m_LocalPosition: {x: -7.9233413, y: 0.7457406, z: 9.526725}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &1789807578202834033
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -94,3 +95,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5864311242745975977, guid: 96a54ad525276a543b49225a52aaf4e8, type: 3}
+--- !u!114 &832204504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835182347844218168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02ab072f26299c944b139eaac073a172, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positiveValue: 1
+  negativeValue: -1
+  fuck: {fileID: 7734214793236917866, guid: 37c725cdfb38b72429b6da9e0d8a34b6, type: 3}
+  fuck2: {fileID: 946606023195933771, guid: ea928812a750a2d46a78356aa828f6ff, type: 3}

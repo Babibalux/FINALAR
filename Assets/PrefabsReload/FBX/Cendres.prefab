@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 5674411599848910932}
   - component: {fileID: 6917448767341908847}
   - component: {fileID: 5802771369449992381}
-  m_Layer: 0
+  - component: {fileID: 9220307456043546051}
+  m_Layer: 8
   m_Name: Cendres
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5802771369449992380}
   m_LocalRotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
-  m_LocalPosition: {x: -3.076291, y: 1.5813957, z: 7.485549}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: -9.722896, y: -9.722896, z: -9.722896}
   m_Children: []
   m_Father: {fileID: 0}
@@ -94,3 +95,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8323208957207176625, guid: 96a54ad525276a543b49225a52aaf4e8, type: 3}
+--- !u!114 &9220307456043546051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5802771369449992380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df3f5e14b26b8245bfa87f95da1b88e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trucdanlbolTEST: {fileID: 3960143270530878134, guid: fd34153ad41bafb458c1bb030cb768e9,
+    type: 3}
+  itemSO: {fileID: 11400000, guid: 490c82986c5c2524dae100dda252c8a2, type: 2}
+  cendres: {fileID: 0}
+  type: 0

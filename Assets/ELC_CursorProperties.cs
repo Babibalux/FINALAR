@@ -10,11 +10,19 @@ public class ELC_CursorProperties : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Emplacement")) cursorTouchEmplacement = true;
+        if (other.gameObject.CompareTag("Emplacement"))
+        {
+            cursorTouchEmplacement = true;
+            touchedObject = other.gameObject;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Emplacement")) cursorTouchEmplacement = false;
+        if (other.gameObject.CompareTag("Emplacement"))
+        {
+            cursorTouchEmplacement = false;
+            touchedObject = null;
+        }
     }
 }
