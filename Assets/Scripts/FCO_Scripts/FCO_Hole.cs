@@ -7,6 +7,9 @@ public class FCO_Hole : MonoBehaviour
     public int positiveValue;
     public int negativeValue;
 
+    public GameObject fuck;
+    public GameObject fuck2;
+
     public int Offrande(List<FCO_ItemsScriptableObjects.IngredientType> types, List<bool> etats)
     {
         if (types.Count == 1)
@@ -27,9 +30,16 @@ public class FCO_Hole : MonoBehaviour
             if ((element1Type == FCO_ItemsScriptableObjects.IngredientType.Ame && element2Type == FCO_ItemsScriptableObjects.IngredientType.Ame) &&
                 (element1State == false && element2State == false))
             {
+
+                //Instantiate<GameObject>(fuck, this.transform);
+                
                 return positiveValue;
             }
-            else return negativeValue;
+            else
+            {
+                //Instantiate<GameObject>(fuck2, this.transform);
+                return negativeValue;
+            }
         }
         else if (types.Count == 3)
         {
