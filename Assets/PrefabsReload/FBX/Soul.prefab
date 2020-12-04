@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3888248642503891989}
   - component: {fileID: 5516842460988739339}
   - component: {fileID: 5163031517876371573}
+  - component: {fileID: 4211086050952764872}
   m_Layer: 0
   m_Name: Soul
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5163031517876371572}
   m_LocalRotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
-  m_LocalPosition: {x: -3.0121312, y: 5.6314354, z: 8.44}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 34.99166, y: 34.99166, z: 37.43255}
   m_Children:
   - {fileID: 6313018248771266433}
@@ -95,6 +96,21 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 3360205768384623511, guid: 0cbb2aec0c1742a479764645dd8c074c, type: 3}
+--- !u!114 &4211086050952764872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5163031517876371572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df3f5e14b26b8245bfa87f95da1b88e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSO: {fileID: 11400000, guid: 963d3cca0c26d664286ff2e4d192d452, type: 2}
+  cendres: {fileID: 0}
+  type: 0
 --- !u!1 &6313018248771266432
 GameObject:
   m_ObjectHideFlags: 0

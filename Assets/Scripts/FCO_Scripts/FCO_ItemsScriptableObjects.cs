@@ -9,5 +9,5 @@ public class FCO_ItemsScriptableObjects : ScriptableObject
     public IngredientType ingredientType;
 
     public bool brulable;
-    public GameObject burnedVersion;
+    public Material burnedVersion;
 }

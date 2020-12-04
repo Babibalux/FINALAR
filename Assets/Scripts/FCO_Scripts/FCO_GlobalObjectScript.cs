@@ -4,26 +4,29 @@ using UnityEngine;
 
 public class FCO_GlobalObjectScript : MonoBehaviour
 {
+    public GameObject trucdanlbolTEST;
+
     public FCO_ItemsScriptableObjects itemSO;
+    public GameObject cendres;
+    MeshRenderer renderer;
+
+    ELC_hand hand;
 
     public enum ItemType { Ingredient, Buche, Bol, Mortier };
     public ItemType type;
 
-    public string braseroTag;
-    public string bolTag;
-    public string mortierTag;
-    public string puitsTag;
+    string braseroTag = "Brasero";
+    string bolTag = "Bol";
+    string mortierTag = "Mortier";
+    string puitsTag = "Puits";
 
-    public GameObject player;
-    public GameObject objectInHand;
-
-    public bool canDoInteraction = false;
+    [System.NonSerialized] public bool burned = false;
     bool isInTheHand = false;
 
-    void Start()
+    private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        
+        hand = FindObjectOfType<ELC_hand>();
+        renderer = GetComponent<MeshRenderer>();
     }
 
     public void UseBehaviour(GameObject touchedObject, GameObject equippedObject)
@@ -34,14 +37,15 @@ public class FCO_GlobalObjectScript : MonoBehaviour
                 {
                     if (touchedObject.CompareTag(mortierTag))
                     {
-                        PlaceAsSiblingOf(equippedObject, touchedObject);
+                        //Donner contenu à Mortier
+                        //Retirer objet de la main
                     }
                     else if (touchedObject.CompareTag(braseroTag))
                     {
                         if (itemSO.brulable)
                         {
-                            //Instantiate<GameObject>(itemSO.burnedVersion, hand.transform).transform.SetPositionAndRotation(equippedObject.transform.position, equippedObject.transform.rotation);
-                            //Destroy(equippedObject);
+                            burned = true;
+                            renderer.material = itemSO.burnedVersion;
                         }
                     }
                     else if (touchedObject.CompareTag(puitsTag))
@@ -51,7 +55,15 @@ public class FCO_GlobalObjectScript : MonoBehaviour
                     }
                     else if (touchedObject.CompareTag(bolTag))
                     {
-                        //Placer dans le bol
+                        touchedObject.GetComponent<FCO_Bol>().PutInTheBowl(itemSO.ingredientType, burned);
+                        hand.inHandObject = null;
+                        hand.playerHoldSomething = false;
+
+                        GameObject instantruc = Instantiate<GameObject>(trucdanlbolTEST, touchedObject.transform);
+                        instantruc.GetComponent<MeshFilter>().mesh = hand.inHandObject.GetComponent<MeshFilter>().mesh;
+                        instantruc.transform.position = Vector3.zero;
+
+                        Destroy(this.gameObject);
                     }
                     break;
                 }
@@ -59,8 +71,9 @@ public class FCO_GlobalObjectScript : MonoBehaviour
                 {
                     if (touchedObject.CompareTag(braseroTag))
                     {
-                        //Instantiate<GameObject>(itemSO.burnedVersion, hand.transform).transform.SetPositionAndRotation(equippedObject.transform.position, equippedObject.transform.rotation);
-                        //Destroy(equippedObject);
+                        hand.PutObjectOnGround();
+                        GameObject cendresTemporaires = Instantiate(cendres);
+                        hand.AddObjectToHand(cendresTemporaires);
                     }
                     else if (touchedObject.CompareTag(puitsTag))
                     {
@@ -100,19 +113,9 @@ public class FCO_GlobalObjectScript : MonoBehaviour
 
     }
 
-    public void PlaceAsSiblingOf(GameObject objectToMove, GameObject newParent)
-    {
-        objectToMove.transform.SetParent(newParent.transform);
-        //Retirer l'objet de la variable hand
-        //Reset son transform local ?
-    }
-
     public void ItemTransfer()
     {
         //Transférer les données de la liste de composants vers une autre
         //Vider la liste de composants du bol ou mortier en main
     }
-
-
-
 }
