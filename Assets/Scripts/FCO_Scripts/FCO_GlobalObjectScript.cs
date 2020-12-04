@@ -18,8 +18,6 @@ public class FCO_GlobalObjectScript : MonoBehaviour
     public GameObject objectInHand;
 
     public bool canDoInteraction = false;
-    bool isInTheHand = false;
-
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
