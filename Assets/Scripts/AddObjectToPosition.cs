@@ -87,19 +87,19 @@ public class AddObjectToPosition : MonoBehaviour
     {
         if (!terrainIsPlaced)
         {
-            GameObject boardGO = Instantiate(GO, placementPose.position, placementPose.rotation);
+            GameObject boardGO = Instantiate(GO, placementPose.position, Quaternion.Inverse(placementPose.rotation) );
             if(boardGO.GetComponent<ARAnchor>() == null) boardGO.AddComponent<ARAnchor>();
         }
-
-        if (isTouchingEmplacement)
+        else if (isTouchingEmplacement)
         {
-            GameObject emplacementObject = Instantiate(GO, cursorScript.touchedObject.transform.position, placementPose.rotation);
+            GameObject emplacementObject = Instantiate(GO, cursorScript.touchedObject.transform.position, Quaternion.identity/*placementPose.rotation*/);
+            cursorScript.touchedObject.GetComponent<ELC_Emplacement>().placeObject(GO);
             if (emplacementObject.GetComponent<ARAnchor>() == null) emplacementObject.AddComponent<ARAnchor>();
 
         }
         else
         {
-            GameObject newGO = Instantiate(GO, placementPose.position, placementPose.rotation);
+            GameObject newGO = Instantiate(GO, placementPose.position, Quaternion.identity/*placementPose.rotation*/);
             if (newGO.GetComponent<ARAnchor>() == null) newGO.AddComponent<ARAnchor>();
         }
     }
@@ -107,9 +107,13 @@ public class AddObjectToPosition : MonoBehaviour
     public void PlaceObjectOnCursor(GameObject GO)
     {
         GO.transform.SetParent(null);
-        if (isTouchingEmplacement) GO.transform.position = cursorScript.touchedObject.transform.position;
+        if (isTouchingEmplacement)
+        {
+            GO.transform.position = cursorScript.touchedObject.transform.position;
+            cursorScript.touchedObject.GetComponent<ELC_Emplacement>().placeObject(GO);
+        }
         else GO.transform.position = placementPose.position;
-        GO.transform.rotation = placementPose.rotation;
+        //GO.transform.rotation = placementPose.rotation;
         if (GO.GetComponent<ARAnchor>() == null) GO.AddComponent<ARAnchor>();
     }
 

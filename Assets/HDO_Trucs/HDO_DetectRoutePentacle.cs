@@ -29,12 +29,11 @@ public class HDO_DetectRoutePentacle : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Cursor") && !hasDetected && dessinage.trail.emitting && waitStart <=0)
+        if (other.CompareTag("Cursor") && !hasDetected && dessinage.trail.emitting && waitStart <=0 && !hasDetected)
         {
             detected = true;
             //particles.Play();
             hasDetected = true;
-            box.enabled = false;
         }
     }
 }

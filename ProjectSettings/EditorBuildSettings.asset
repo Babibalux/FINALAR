@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: "Assets/Scenes/F\xE9lix.unity"
     guid: c21fcf0792e2545409cecd30dbe9a40a
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/ELC_scene.unity
     guid: dff4a6e4541398a4d916f00d8c09a625
   m_configObjects:

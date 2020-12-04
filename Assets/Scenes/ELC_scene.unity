@@ -219,29 +219,6 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 1132444722}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &964729695 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1277629593486413531, guid: 515ebe5cd8f08ab4382d26db23c7d2b7,
-    type: 3}
-  m_PrefabInstance: {fileID: 1132444722}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &964729697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964729695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b21b2f1806d2904499813ec852d3995, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dessinage: {fileID: 0}
-  route: []
-  chemin: []
-  objectsToActivate: []
-  timeForPentacle: 0
 --- !u!1001 &1132444722
 PrefabInstance:
   m_ObjectHideFlags: 0

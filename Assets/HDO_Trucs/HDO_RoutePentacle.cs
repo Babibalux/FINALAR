@@ -155,6 +155,7 @@ public class HDO_RoutePentacle : MonoBehaviour
                     {
                         pentacleFail = true;
                         checkPentacle = false;
+                        pentacleDone = true;
                     }
                 }
             }
