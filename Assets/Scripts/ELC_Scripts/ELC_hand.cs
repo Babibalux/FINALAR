@@ -33,6 +33,13 @@ public class ELC_hand : MonoBehaviour
         }
     }
 
+    public void DestroyHandObject()
+    {
+        Destroy(inHandObject);
+        inHandObject = null;
+        playerHoldSomething = false;
+    }
+
 
 
 }
