@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Fleur
   m_EditorClassIdentifier: 
   ingredientType: 3
-  brulable: 1
+  brulable: 0
   burnedVersion: {fileID: 2100000, guid: 4996ca2f0c6a9c64e8e4c412a8baefbb, type: 2}

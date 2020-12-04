@@ -78,7 +78,8 @@ public class AddObjectToPosition : MonoBehaviour
             }
             if (handScript.playerHoldSomething && touchedGameObject != null && touchedGameObject != handScript.inHandObject) handScript.inHandObject.GetComponent<FCO_GlobalObjectScript>().UseBehaviour(touchedGameObject, handScript.inHandObject);
             else if (placementPoseIsValid && handScript.playerHoldSomething && touchPosition.x < Screen.width / 2 && touchPosition.y < Screen.height / 2) handScript.PutObjectOnGround();
-            else if (touchedGameObject != null && !handScript.playerHoldSomething && touchedGameObject != handScript.inHandObject) handScript.AddObjectToHand(touchedGameObject);
+            else if (touchedGameObject != null && !handScript.playerHoldSomething && touchedGameObject != handScript.inHandObject
+                && !touchedGameObject.CompareTag("Puits")) handScript.AddObjectToHand(touchedGameObject);
 
         }
     }
