@@ -10,7 +10,7 @@ public class FCO_GlobalObjectScript : MonoBehaviour
     public GameObject cendres;
     MeshRenderer renderer;
 
-    ELC_hand hand;
+    [System.NonSerialized] public ELC_hand hand;
 
     public enum ItemType { Ingredient, Buche, Bol, Mortier };
     public ItemType type;
@@ -37,8 +37,14 @@ public class FCO_GlobalObjectScript : MonoBehaviour
                 {
                     if (touchedObject.CompareTag(mortierTag))
                     {
-                        //Donner contenu à Mortier
-                        //Retirer objet de la main
+                        touchedObject.GetComponent<FCO_Bol>().PutInTheBowl(itemSO.ingredientType, burned);
+
+                        GameObject instantruc = Instantiate<GameObject>(trucdanlbolTEST, touchedObject.transform);
+                        instantruc.GetComponent<MeshFilter>().mesh = hand.inHandObject.GetComponent<MeshFilter>().mesh;
+                        instantruc.GetComponent<MeshRenderer>().material = hand.inHandObject.GetComponent<MeshRenderer>().material;
+                        instantruc.transform.localPosition = Vector3.zero;
+
+                        hand.DestroyHandObject();
                     }
                     else if (touchedObject.CompareTag(braseroTag))
                     {
@@ -53,23 +59,14 @@ public class FCO_GlobalObjectScript : MonoBehaviour
                         VerificationContentement();
                         Destroy(equippedObject);
                     }
-                    else if (touchedObject.CompareTag(bolTag))
-                    {
-                        touchedObject.GetComponent<FCO_Bol>().PutInTheBowl(itemSO.ingredientType, burned);
-
-                        GameObject instantruc = Instantiate<GameObject>(trucdanlbolTEST, touchedObject.transform);
-                        instantruc.GetComponent<MeshFilter>().mesh = hand.inHandObject.GetComponent<MeshFilter>().mesh;
-                        instantruc.transform.localPosition = Vector3.zero;
-
-                        hand.DestroyHandObject();
-                    }
                     break;
                 }
             case ItemType.Buche:
                 {
                     if (touchedObject.CompareTag(braseroTag))
                     {
-                        hand.PutObjectOnGround();
+                        hand.DestroyHandObject();
+
                         GameObject cendresTemporaires = Instantiate(cendres);
                         hand.AddObjectToHand(cendresTemporaires);
                     }
@@ -85,7 +82,7 @@ public class FCO_GlobalObjectScript : MonoBehaviour
                     if (touchedObject.CompareTag(puitsTag))
                     {
                         VerificationContentement();
-                        //retirer le contenu du bol
+                        //détruire le bol
                     }
                     break;
                 }
@@ -98,8 +95,7 @@ public class FCO_GlobalObjectScript : MonoBehaviour
                     }
                     else if (touchedObject.CompareTag(bolTag))
                     {
-                        //donner au bol le contenu du mortier
-                        //retirer le contenu du mortier
+                        GetComponent<FCO_Bol>().TransferContent(touchedObject.GetComponent<FCO_Bol>().typeContenu, touchedObject.GetComponent<FCO_Bol>().etatContenu, touchedObject);
                     }
                     break;
                 }
@@ -109,11 +105,5 @@ public class FCO_GlobalObjectScript : MonoBehaviour
     public void VerificationContentement()
     {
 
-    }
-
-    public void ItemTransfer()
-    {
-        //Transférer les données de la liste de composants vers une autre
-        //Vider la liste de composants du bol ou mortier en main
     }
 }
