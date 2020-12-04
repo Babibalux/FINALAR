@@ -10,6 +10,8 @@ public class HDO_RoutePentacle : MonoBehaviour
     public List<HDO_DetectRoutePentacle> route = null;
     public List<HDO_DetectRoutePentacle> chemin = null;
     public List<GameObject> objectsToActivate = new List<GameObject>();
+    public Material completePentacle;
+    public MeshRenderer pentacle;
     int nextPointR, nextPointL;
     int iteration;
     public bool pentacleFail = false, checkPentacle = true, pentacleDone = false;
@@ -76,6 +78,7 @@ public class HDO_RoutePentacle : MonoBehaviour
 
         if (pentacleFail)
         {
+            pentacle.materials[0] = completePentacle;
             Destroy(gameObject);
             GoodDessin = false;
         }
