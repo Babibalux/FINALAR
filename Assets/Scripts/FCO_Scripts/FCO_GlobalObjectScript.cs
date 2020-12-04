@@ -61,7 +61,7 @@ public class FCO_GlobalObjectScript : MonoBehaviour
                         List<bool> inHoleState = new List<bool>();
                         inHoleState.Add(burned);
 
-                        touchedObject.GetComponent<FCO_Hole>().Offrande(inHoleType, inHoleState);
+                        hand.GetComponent<FCO_ContentementManagement>().contentement = touchedObject.GetComponent<FCO_Hole>().Offrande(inHoleType, inHoleState);
 
                         hand.DestroyHandObject();
                     }
@@ -78,7 +78,7 @@ public class FCO_GlobalObjectScript : MonoBehaviour
                     }
                     else if (touchedObject.CompareTag(puitsTag))
                     {
-                        touchedObject.GetComponent<FCO_Hole>().Offrande(new List<FCO_ItemsScriptableObjects.IngredientType>(0), new List<bool>(0));
+                        hand.GetComponent<FCO_ContentementManagement>().contentement = touchedObject.GetComponent<FCO_Hole>().Offrande(new List<FCO_ItemsScriptableObjects.IngredientType>(0), new List<bool>(0));
                         hand.DestroyHandObject();
                     }
                     break;
@@ -87,19 +87,15 @@ public class FCO_GlobalObjectScript : MonoBehaviour
                 {
                     if (touchedObject.CompareTag(puitsTag))
                     {
-                        //VerificationContentement();
-                        //détruire le bol
+                        hand.GetComponent<FCO_ContentementManagement>().contentement = touchedObject.GetComponent<FCO_Hole>().Offrande(GetComponent<FCO_Bol>().typeContenu, GetComponent<FCO_Bol>().etatContenu);
+                        hand.inHandObject.GetComponent<MeshRenderer>().material = itemSO.burnedVersion;
+                        hand.DestroyHandObject();
                     }
                     break;
                 }
             case ItemType.Mortier:
                 {
-                    if (touchedObject.CompareTag(puitsTag))
-                    {
-                        //VerificationContentement();
-                        //retirer le contenu du mortier
-                    }
-                    else if (touchedObject.CompareTag(bolTag))
+                    if (touchedObject.CompareTag(bolTag))
                     {
                         GetComponent<FCO_Bol>().TransferContent(touchedObject.GetComponent<FCO_Bol>().typeContenu, touchedObject.GetComponent<FCO_Bol>().etatContenu, touchedObject);
                     }
