@@ -18,6 +18,8 @@ public class HDO_Dialogues : MonoBehaviour
     public List<string> espaceInvoqued = null;
     public List<string> correctPentacle = null;
     public List<string> ratedPentacle = null;
+
+    public bool shouldWrite = true;
     
 
 
@@ -29,9 +31,19 @@ public class HDO_Dialogues : MonoBehaviour
     private void Update()
     {
         ChooseList();
-        text.text = usedList[sentenceNumber];
 
-        
+        if (shouldWrite)
+        {
+            btn.gameObject.SetActive(true);
+            text.text = usedList[sentenceNumber];
+        }
+        else
+        {
+            btn.gameObject.SetActive(false);
+            text.text = "";
+        }
+
+
     }
 
     void ChooseList()
@@ -47,6 +59,14 @@ public class HDO_Dialogues : MonoBehaviour
         else if(sequence == 2)
         {
             usedList = espaceInvoqued;
+        }
+        else if(sequence == 3)
+        {
+            usedList = correctPentacle;
+        }
+        else if(sequence == 4)
+        {
+            usedList = ratedPentacle;
         }
     }
 

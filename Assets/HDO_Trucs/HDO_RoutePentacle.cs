@@ -6,6 +6,7 @@ public class HDO_RoutePentacle : MonoBehaviour
 {
     ParticleSystem particles;
     public HDO_Dessinage dessinage;
+    HDO_Dialogues dialogues;
     public List<HDO_DetectRoutePentacle> route = null;
     public List<HDO_DetectRoutePentacle> chemin = null;
     public List<GameObject> objectsToActivate = new List<GameObject>();
@@ -23,6 +24,7 @@ public class HDO_RoutePentacle : MonoBehaviour
         particles = GetComponent<ParticleSystem>();
         particles.Stop();
         dessinage = GameObject.FindObjectOfType<HDO_Dessinage>();
+        dialogues = GameObject.FindObjectOfType<HDO_Dialogues>();
     }
 
     // Update is called once per frame
@@ -58,7 +60,14 @@ public class HDO_RoutePentacle : MonoBehaviour
         {
             GO.SetActive(true);
         }
-
+        if (pentacleFail)
+        {
+            dialogues.sequence = 4;
+        }
+        else
+        {
+            dialogues.sequence = 3;
+        }
         dessinage.dessinage = false;
         if (pentacleFail) Destroy(gameObject);
         particles.Play();
