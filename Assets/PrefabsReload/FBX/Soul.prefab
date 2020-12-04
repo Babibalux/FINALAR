@@ -108,6 +108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df3f5e14b26b8245bfa87f95da1b88e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trucdanlbolTEST: {fileID: 1994296391758012297, guid: 304c2f944caa6e84695c8542199e4906,
+    type: 3}
   itemSO: {fileID: 11400000, guid: 963d3cca0c26d664286ff2e4d192d452, type: 2}
   cendres: {fileID: 0}
   type: 0

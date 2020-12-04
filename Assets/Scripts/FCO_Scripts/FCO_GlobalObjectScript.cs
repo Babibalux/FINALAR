@@ -56,14 +56,12 @@ public class FCO_GlobalObjectScript : MonoBehaviour
                     else if (touchedObject.CompareTag(bolTag))
                     {
                         touchedObject.GetComponent<FCO_Bol>().PutInTheBowl(itemSO.ingredientType, burned);
-                        hand.inHandObject = null;
-                        hand.playerHoldSomething = false;
 
                         GameObject instantruc = Instantiate<GameObject>(trucdanlbolTEST, touchedObject.transform);
                         instantruc.GetComponent<MeshFilter>().mesh = hand.inHandObject.GetComponent<MeshFilter>().mesh;
-                        instantruc.transform.position = Vector3.zero;
+                        instantruc.transform.localPosition = Vector3.zero;
 
-                        Destroy(this.gameObject);
+                        hand.DestroyHandObject();
                     }
                     break;
                 }

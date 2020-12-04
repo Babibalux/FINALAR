@@ -76,7 +76,7 @@ public class AddObjectToPosition : MonoBehaviour
 
                 
             }
-            if (handScript.playerHoldSomething && touchedGameObject != null) handScript.inHandObject.GetComponent<FCO_GlobalObjectScript>().UseBehaviour(touchedGameObject, handScript.inHandObject);
+            if (handScript.playerHoldSomething && touchedGameObject != null && touchedGameObject != handScript.inHandObject) handScript.inHandObject.GetComponent<FCO_GlobalObjectScript>().UseBehaviour(touchedGameObject, handScript.inHandObject);
             else if (placementPoseIsValid && handScript.playerHoldSomething && touchPosition.x < Screen.width / 2 && touchPosition.y < Screen.height / 2) handScript.PutObjectOnGround();
             else if (touchedGameObject != null && !handScript.playerHoldSomething && touchedGameObject != handScript.inHandObject) handScript.AddObjectToHand(touchedGameObject);
 
@@ -153,7 +153,7 @@ public class AddObjectToPosition : MonoBehaviour
             placementPose.position = raycast.point;
             var cameraForward = Camera.current.transform.forward;
             var cameraBearing = new Vector3(cameraForward.x, 0, cameraForward.z).normalized;
-            placementPose.rotation = Quaternion.LookRotation(cameraBearing);
+            placementPose.rotation = Quaternion.LookRotation(new Vector3 (cameraBearing.x, 0, cameraBearing.y));
         }
         else placementPoseIsValid = false;
     }
