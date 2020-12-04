@@ -171,7 +171,7 @@ PrefabInstance:
     - target: {fileID: 8160291744691751035, guid: 515ebe5cd8f08ab4382d26db23c7d2b7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8160291744691751035, guid: 515ebe5cd8f08ab4382d26db23c7d2b7,
         type: 3}
@@ -266,7 +266,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2129063337
 GameObject:
@@ -360,85 +360,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1001 &1369486809946382856
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 966999671759485013, guid: c1c2a6efb9d81194c966d3971ca0959f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 966999671759485013, guid: c1c2a6efb9d81194c966d3971ca0959f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 966999671759485013, guid: c1c2a6efb9d81194c966d3971ca0959f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 966999671759485013, guid: c1c2a6efb9d81194c966d3971ca0959f,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.34750822
-      objectReference: {fileID: 0}
-    - target: {fileID: 966999671759485013, guid: c1c2a6efb9d81194c966d3971ca0959f,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.44526884
-      objectReference: {fileID: 0}
-    - target: {fileID: 966999671759485013, guid: c1c2a6efb9d81194c966d3971ca0959f,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.13053297
-      objectReference: {fileID: 0}
-    - target: {fileID: 966999671759485013, guid: c1c2a6efb9d81194c966d3971ca0959f,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.81482196
-      objectReference: {fileID: 0}
-    - target: {fileID: 966999671759485013, guid: c1c2a6efb9d81194c966d3971ca0959f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 966999671759485013, guid: c1c2a6efb9d81194c966d3971ca0959f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -43.044003
-      objectReference: {fileID: 0}
-    - target: {fileID: 966999671759485013, guid: c1c2a6efb9d81194c966d3971ca0959f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -60.313004
-      objectReference: {fileID: 0}
-    - target: {fileID: 966999671759485013, guid: c1c2a6efb9d81194c966d3971ca0959f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 7.6070004
-      objectReference: {fileID: 0}
-    - target: {fileID: 1369486809362609282, guid: c1c2a6efb9d81194c966d3971ca0959f,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1369486809463498424, guid: c1c2a6efb9d81194c966d3971ca0959f,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4211503007278591405, guid: c1c2a6efb9d81194c966d3971ca0959f,
-        type: 3}
-      propertyPath: m_Name
-      value: Book
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c1c2a6efb9d81194c966d3971ca0959f, type: 3}
 --- !u!1001 &2581255647096510161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -484,7 +405,7 @@ PrefabInstance:
     - target: {fileID: 2687451456921655746, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2687451456921655746, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
         type: 3}
@@ -506,174 +427,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueManager
       objectReference: {fileID: 0}
-    - target: {fileID: 3363563995266997624, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: m_TagString
-      value: DialogueManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: introduction.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: initialisation.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: espaceInvoqued.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: correctPentacle.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: ratedPentacle.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: zeGoodDemon.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: zeMocheDemon.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
         type: 3}
       propertyPath: btn
       value: 
       objectReference: {fileID: 110427723}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: introduction.Array.data[0]
-      value: "Bonjour. Tu ne m'entends peut-\xEAtre pas mais je sais que tu peux
-        me lire. Ravi de faire ta connaissance."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: introduction.Array.data[1]
-      value: "Je m'appelle Majiko. Je me montrerai bien \xE0 toi, malheureusement
-        j'en suis incapable pour le moment."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: introduction.Array.data[2]
-      value: "Vois-tu, quelqu'un m'a jet\xE9 un terrible sortil\xE8ge et j'ai perdu
-        mon enveloppe corporelle. Je suis condamn\xE9 \xE0 errer comme un esprit
-        d\xE9sincarn\xE9."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: introduction.Array.data[3]
-      value: "Mais j'y pense ! Tu pourrais m'aider ! J'ai suffisament de force pour
-        invoquer les ingr\xE9dients n\xE9cessaires pour rompre le sortil\xE8ge."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: introduction.Array.data[4]
-      value: "Et toi, tu as un corps tangible, id\xE9al pour que tu ex\xE9cutes le
-        rituel pour moi."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: introduction.Array.data[5]
-      value: "Surtout que si tu m'aides, je te r\xE9compenserais comme il se doit,
-        h\xE9h\xE9h\xE9 !"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: initialisation.Array.data[0]
-      value: "J'ai besoin que tu m'indiques o\xF9 je peux invoquer les ingr\xE9dients
-        du rituel \xE0 travers ton t\xE9l\xE9phone. Je te conseille de choisir une
-        zone plane relativement grande."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: numberOfSequences
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: espaceInvoqued.Array.data[0]
-      value: "Tu t'en sors plut\xF4t bien. Pour un humain. "
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: espaceInvoqued.Array.data[1]
-      value: "Enfin...c'\xE9tait la partie facile, on rentre dans le vif du sujet
-        \xE0 partir de maintenant."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: espaceInvoqued.Array.data[2]
-      value: "Si tu as pr\xEAt\xE9 attention, tu trouveras les instructions du rituel
-        dans le grimoire \xE0 ta gauche."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: espaceInvoqued.Array.data[3]
-      value: Je te comman... recommande de lire correctement les instructions avant
-        de commencer.
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: espaceInvoqued.Array.data[4]
-      value: "Apr\xE8s tout, tu ne voudrais pas faire \xE9chouer le rituel et me
-        mettre en col\xE8re, n'est-ce pas ?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: correctPentacle.Array.data[0]
-      value: "Mhmm....laisse-moi deviner, l'art n'a jamais \xE9t\xE9 ton point fort
-        \xE0 toi..."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: correctPentacle.Array.data[1]
-      value: Enfin...Je m'en contenterai.
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: ratedPentacle.Array.data[0]
-      value: "Mais qu'est-ce que.... Pour une fois dans ta mis\xE9rable existence,
-        tu ne voudrais pas r\xE9ussir quelque chose ?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: ratedPentacle.Array.data[1]
-      value: "Assez perdu de temps, je vais m'en charger moi-m\xEAme. Recule, et
-        ne me d\xE9\xE7oit plus \xE0 l'avenir."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: zeGoodDemon.Array.data[0]
-      value: Enfin ! J'attendais cela depuis si longtemps !
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: zeGoodDemon.Array.data[1]
-      value: Je te remercie. Insecte.
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: zeMocheDemon.Array.data[0]
-      value: Mais....Qu'as-tu fais vermine ?! Ce n'est pas le corps qu'il me fallait
-        !
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102436613631504940, guid: 846e0d4bf9eae744c94ba4ba47776ff4,
-        type: 3}
-      propertyPath: zeMocheDemon.Array.data[1]
-      value: "Esp\xE8ce de traitre ! Attend un peu que je trouve un autre moyen de
-        r\xE9cup\xE9rer mes pouvoirs !"
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 846e0d4bf9eae744c94ba4ba47776ff4, type: 3}
 --- !u!114 &2581255647096510162 stripped
@@ -743,7 +501,7 @@ PrefabInstance:
     - target: {fileID: 5290801894265594321, guid: 64345e395d8021940b2979d2b047de78,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5290801894265594321, guid: 64345e395d8021940b2979d2b047de78,
         type: 3}

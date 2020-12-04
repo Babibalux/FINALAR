@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7102436613631504940}
   m_Layer: 0
   m_Name: DialogueManager
-  m_TagString: Untagged
+  m_TagString: DialogueManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,3 +43,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6538403785dc7ab4cbf6f0168b557512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  btn: {fileID: 0}
+  sentenceNumber: 0
+  sequence: 0
+  numberOfSequences: 7
+  usedList: []
+  introduction:
+  - "Bonjour. Tu ne m'entends peut-\xEAtre pas mais je sais que tu peux me lire.
+    Ravi de faire ta connaissance."
+  - "Je m'appelle Majiko. Je me montrerai bien \xE0 toi, malheureusement j'en suis
+    incapable pour le moment."
+  - "Vois-tu, quelqu'un m'a jet\xE9 un terrible sortil\xE8ge et j'ai perdu mon enveloppe
+    corporelle. Je suis condamn\xE9 \xE0 errer comme un esprit d\xE9sincarn\xE9."
+  - "Mais j'y pense ! Tu pourrais m'aider ! J'ai suffisament de force pour invoquer
+    les ingr\xE9dients n\xE9cessaires pour rompre le sortil\xE8ge."
+  - "Et toi, tu as un corps tangible, id\xE9al pour que tu ex\xE9cutes le rituel
+    pour moi."
+  - "Surtout que si tu m'aides, je te r\xE9compenserais comme il se doit, h\xE9h\xE9h\xE9
+    !"
+  initialisation:
+  - "J'ai besoin que tu m'indiques o\xF9 je peux invoquer les ingr\xE9dients du rituel
+    \xE0 travers ton t\xE9l\xE9phone. Je te conseille de choisir une zone plane relativement
+    grande."
+  espaceInvoqued:
+  - "Tu t'en sors plut\xF4t bien. Pour un humain. "
+  - "Enfin...c'\xE9tait la partie facile, on rentre dans le vif du sujet \xE0 partir
+    de maintenant."
+  - "Si tu as pr\xEAt\xE9 attention, tu trouveras les instructions du rituel dans
+    le grimoire \xE0 ta gauche."
+  - Je te comman... recommande de lire correctement les instructions avant de commencer.
+  - "Apr\xE8s tout, tu ne voudrais pas faire \xE9chouer le rituel et me mettre en
+    col\xE8re, n'est-ce pas ?"
+  correctPentacle:
+  - "Mhmm....laisse-moi deviner, l'art n'a jamais \xE9t\xE9 ton point fort \xE0 toi..."
+  - Enfin...Je m'en contenterai.
+  ratedPentacle:
+  - "Mais qu'est-ce que.... Pour une fois dans ta mis\xE9rable existence, tu ne voudrais
+    pas r\xE9ussir quelque chose ?"
+  - "Assez perdu de temps, je vais m'en charger moi-m\xEAme. Recule, et ne me d\xE9\xE7oit
+    plus \xE0 l'avenir."
+  zeGoodDemon:
+  - Enfin ! J'attendais cela depuis si longtemps !
+  - Je te remercie. Insecte.
+  zeMocheDemon:
+  - Mais....Qu'as-tu fais vermine ?! Ce n'est pas le corps qu'il me fallait !
+  - "Esp\xE8ce de traitre ! Attend un peu que je trouve un autre moyen de r\xE9cup\xE9rer
+    mes pouvoirs !"
+  shouldWrite: 1

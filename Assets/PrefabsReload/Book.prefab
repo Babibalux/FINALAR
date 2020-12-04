@@ -397,8 +397,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Disposer le second tas de cendre \xE0 droite de la poudre de fleur de
-    sel ;\r\n"
+  m_Text: "Disposer le second tas de cendre \xE0 droite de la fleur ;\r\n"
 --- !u!1 &1369486808730978711
 GameObject:
   m_ObjectHideFlags: 0
