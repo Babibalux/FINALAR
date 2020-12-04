@@ -50,13 +50,13 @@ public class FCO_ContentementManagement : MonoBehaviour
         {
             if (contentement >= 0)
             {
-                Instantiate<GameObject>(demonBG, GameObject.FindGameObjectWithTag("Puits").transform);
+                Instantiate<GameObject>(demonBG, GameObject.FindGameObjectWithTag("Puits").transform.position, Quaternion.identity);
                 dialogues.sequence = 5;
                 dialogues.shouldWrite = true;
             }
             else
             {
-                Instantiate<GameObject>(demimonde, GameObject.FindGameObjectWithTag("Puits").transform);
+                Instantiate<GameObject>(demimonde, GameObject.FindGameObjectWithTag("Puits").transform.position, Quaternion.identity);
                 dialogues.sequence = 6;
                 dialogues.shouldWrite = true;
             }
