@@ -45,6 +45,7 @@ public class HDO_RoutePentacle : MonoBehaviour
         if(timeForPentacle <= 0)
         {
             pentacleFail = true;
+            pentacle.material = completePentacle;
             PentacleEnded();
         }
 
@@ -68,17 +69,18 @@ public class HDO_RoutePentacle : MonoBehaviour
         {
             dialogues.shouldWrite = true;
             dialogues.sequence = 4;
+            pentacle.material = completePentacle;
         }
         else
         {
             dialogues.shouldWrite = true;
             dialogues.sequence = 3;
+            pentacle.material = completePentacle;
         }
         dessinage.dessinage = false;
 
         if (pentacleFail)
         {
-            pentacle.materials[0] = completePentacle;
             Destroy(gameObject);
             GoodDessin = false;
         }
