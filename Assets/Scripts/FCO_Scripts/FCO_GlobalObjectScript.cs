@@ -87,7 +87,7 @@ public class FCO_GlobalObjectScript : MonoBehaviour
                 {
                     if (touchedObject.CompareTag(puitsTag))
                     {
-                        VerificationContentement();
+                        //VerificationContentement();
                         //détruire le bol
                     }
                     break;
@@ -96,7 +96,7 @@ public class FCO_GlobalObjectScript : MonoBehaviour
                 {
                     if (touchedObject.CompareTag(puitsTag))
                     {
-                        VerificationContentement();
+                        //VerificationContentement();
                         //retirer le contenu du mortier
                     }
                     else if (touchedObject.CompareTag(bolTag))
