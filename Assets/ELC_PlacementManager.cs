@@ -8,6 +8,9 @@ public class ELC_PlacementManager : MonoBehaviour
 
     private int verifiedObjects;
     private int verifiedCandles;
+    public bool candlesAreGood;
+    public bool objectsAreGood;
+
 
     public List<GameObject> objectsPlacements = new List<GameObject>(); //Sud, Ouest, Nord-Ouest, Nord-Est, Est
     public List<GameObject> candlesPlacements = new List<GameObject>(); //Nord, Est, Sud-Est, Sud-Ouest, Ouest
@@ -25,23 +28,29 @@ public class ELC_PlacementManager : MonoBehaviour
         {
             if (objectsPlacements[i].GetComponent<ELC_Emplacement>().objectPlaced != null && objectsOrder[i] != null)
             {
-                if (objectsPlacements[i].GetComponent<ELC_Emplacement>().objectPlaced.GetComponent<FCO_ItemsScriptableObjects>().ingredientType.ToString() == objectsOrder[i]) verifiedObjects++;
+                if (objectsPlacements[i].GetComponent<ELC_Emplacement>().objectPlaced.GetComponent<FCO_ItemsScriptableObjects>().ingredientType.ToString() == objectsOrder[i])
+                {
+                    verifiedObjects++;
+                }
             }
 
             if (candlesPlacements[i].GetComponent<ELC_Emplacement>().objectPlaced != null)
             {
-                if (candlesTagOrder[i] == candlesPlacements[i].GetComponent<ELC_Emplacement>().objectPlaced.GetComponent<FCO_ItemsScriptableObjects>().ingredientType.ToString()) verifiedCandles++;
+                if (candlesTagOrder[i] == candlesPlacements[i].GetComponent<ELC_Emplacement>().objectPlaced.tag)
+                {
+                    verifiedCandles++;
+                }
             }
         }
 
         if(verifiedCandles >= 5)
         {
-            ps.Play();
+            candlesAreGood = true;
         }
 
         if(verifiedObjects >= 3)
         {
-            //Objets vérifiés
+            objectsAreGood = true;
         }
 
     }

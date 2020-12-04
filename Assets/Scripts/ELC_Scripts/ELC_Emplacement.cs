@@ -6,8 +6,9 @@ public class ELC_Emplacement : MonoBehaviour
 {
     public GameObject objectPlaced;
 
+
     public void placeObject(GameObject GO)
     {
-        if (GO.CompareTag("candle")) objectPlaced = GO;
+        if (GO.CompareTag("WhiteCandle") || GO.CompareTag("GreenCandle") || GO.CompareTag("BlackCandle") || GO.CompareTag("PurpleCandle") || GO.CompareTag("RedCandle")) objectPlaced = GO;
     }
 }
