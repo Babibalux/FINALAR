@@ -76,8 +76,10 @@ public class AddObjectToPosition : MonoBehaviour
 
                 
             }
-            if (placementPoseIsValid && handScript.playerHoldSomething && touchPosition.x < Screen.width / 2 && touchPosition.y < Screen.height / 2) handScript.PutObjectOnGround();
+            if (handScript.playerHoldSomething && touchedGameObject != null) handScript.inHandObject.GetComponent<FCO_GlobalObjectScript>().UseBehaviour(touchedGameObject, handScript.inHandObject);
+            else if (placementPoseIsValid && handScript.playerHoldSomething && touchPosition.x < Screen.width / 2 && touchPosition.y < Screen.height / 2) handScript.PutObjectOnGround();
             else if (touchedGameObject != null && !handScript.playerHoldSomething && touchedGameObject != handScript.inHandObject) handScript.AddObjectToHand(touchedGameObject);
+
         }
     }
 

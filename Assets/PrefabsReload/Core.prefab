@@ -346,11 +346,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5580971610505207115, guid: e036376a20470534ea7cf30380442909,
         type: 3}
-      propertyPath: m_PlanePrefab
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5580971610505207115, guid: e036376a20470534ea7cf30380442909,
-        type: 3}
       propertyPath: m_DetectionMode
       value: 1
       objectReference: {fileID: 0}
