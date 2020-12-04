@@ -5,6 +5,7 @@ using UnityEngine;
 public class HDO_RoutePentacle : MonoBehaviour
 {
     ParticleSystem particles;
+    public GameObject book;
     public HDO_Dessinage dessinage;
     public List<HDO_DetectRoutePentacle> route = null;
     public List<HDO_DetectRoutePentacle> chemin = null;
@@ -12,6 +13,8 @@ public class HDO_RoutePentacle : MonoBehaviour
     int nextPointR, nextPointL;
     int iteration;
     bool pentacleFail = false, checkPentacle = true, pentacleDone = false;
+
+    public bool GoodDessin;
 
     int routeType = -1;
     int checkedRoute = 0;
@@ -23,6 +26,7 @@ public class HDO_RoutePentacle : MonoBehaviour
         particles = GetComponent<ParticleSystem>();
         particles.Stop();
         dessinage = GameObject.FindObjectOfType<HDO_Dessinage>();
+        book = GameObject.FindWithTag("Book").gameObject;
     }
 
     // Update is called once per frame
@@ -60,7 +64,15 @@ public class HDO_RoutePentacle : MonoBehaviour
         }
 
         dessinage.dessinage = false;
-        if (pentacleFail) Destroy(gameObject);
+
+        book.SetActive(true);
+        book.transform.SetParent(null);
+
+        if (pentacleFail)
+        {
+            Destroy(gameObject);
+            GoodDessin = false;
+        }
         particles.Play();
         pentacleDone = false;
     }
