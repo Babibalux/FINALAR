@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 2231675547412560143}
   - component: {fileID: 5539568912600133117}
   - component: {fileID: 719567694128967955}
-  m_Layer: 0
+  - component: {fileID: 700544130963389352}
+  m_Layer: 8
   m_Name: Bowl High
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,3 +110,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeContenu: 
   etatContenu: 
+--- !u!114 &700544130963389352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5539568912600133116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df3f5e14b26b8245bfa87f95da1b88e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trucdanlbolTEST: {fileID: 3960143270530878134, guid: fd34153ad41bafb458c1bb030cb768e9,
+    type: 3}
+  itemSO: {fileID: 11400000, guid: ae78898003394924b9b9b8025a60c181, type: 2}
+  cendres: {fileID: 0}
+  type: 2
