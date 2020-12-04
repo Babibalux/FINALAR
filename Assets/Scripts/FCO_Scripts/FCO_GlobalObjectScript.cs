@@ -56,8 +56,14 @@ public class FCO_GlobalObjectScript : MonoBehaviour
                     }
                     else if (touchedObject.CompareTag(puitsTag))
                     {
-                        VerificationContentement();
-                        Destroy(equippedObject);
+                        List<FCO_ItemsScriptableObjects.IngredientType> inHoleType = new List<FCO_ItemsScriptableObjects.IngredientType>();
+                        inHoleType.Add(itemSO.ingredientType);
+                        List<bool> inHoleState = new List<bool>();
+                        inHoleState.Add(burned);
+
+                        touchedObject.GetComponent<FCO_Hole>().Offrande(inHoleType, inHoleState);
+
+                        hand.DestroyHandObject();
                     }
                     break;
                 }
@@ -72,8 +78,8 @@ public class FCO_GlobalObjectScript : MonoBehaviour
                     }
                     else if (touchedObject.CompareTag(puitsTag))
                     {
-                        VerificationContentement();
-                        Destroy(equippedObject);
+                        touchedObject.GetComponent<FCO_Hole>().Offrande(new List<FCO_ItemsScriptableObjects.IngredientType>(0), new List<bool>(0));
+                        hand.DestroyHandObject();
                     }
                     break;
                 }
@@ -100,10 +106,5 @@ public class FCO_GlobalObjectScript : MonoBehaviour
                     break;
                 }
         }
-    }
-
-    public void VerificationContentement()
-    {
-
     }
 }
