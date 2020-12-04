@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 3117804471571133601}
   - component: {fileID: 6998349986044089192}
   - component: {fileID: 4342528917402591520}
-  m_Layer: 0
+  - component: {fileID: 1763537015}
+  m_Layer: 8
   m_Name: Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4342528917402591521}
-  m_LocalRotation: {x: -0.5, y: -0.49999988, z: 0.49999997, w: 0.5000001}
+  m_LocalRotation: {x: -0.50000006, y: -0.5, z: 0.50000006, w: 0.5}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 90.00001}
 --- !u!33 &3117804471571133601
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -94,3 +95,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1736622283181914040, guid: c04a968709a4c6542a4751da1e46d6cd, type: 3}
+--- !u!114 &1763537015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4342528917402591521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df3f5e14b26b8245bfa87f95da1b88e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trucdanlbolTEST: {fileID: 3960143270530878134, guid: fd34153ad41bafb458c1bb030cb768e9,
+    type: 3}
+  itemSO: {fileID: 0}
+  cendres: {fileID: 5802771369449992380, guid: cf0bb149525921347b5a15cf2723b8bb, type: 3}
+  type: 1

@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5544722854474943200}
   - component: {fileID: 7311917418436347002}
   - component: {fileID: 3761515062016703650}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Brasero
-  m_TagString: Untagged
+  m_TagString: Brasero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
