@@ -18,7 +18,11 @@ public class HDO_Dialogues : MonoBehaviour
     public List<string> espaceInvoqued = null;
     public List<string> correctPentacle = null;
     public List<string> ratedPentacle = null;
-    
+    public List<string> zeGoodDemon = null;
+    public List<string> zeMocheDemon = null;
+
+    public bool shouldWrite = true;
+
 
 
     void Start()
@@ -29,9 +33,19 @@ public class HDO_Dialogues : MonoBehaviour
     private void Update()
     {
         ChooseList();
-        text.text = usedList[sentenceNumber];
 
-        
+        if (shouldWrite)
+        {
+            btn.gameObject.SetActive(true);
+            text.text = usedList[sentenceNumber];
+        }
+        else
+        {
+            btn.gameObject.SetActive(false);
+            text.text = "";
+        }
+
+
     }
 
     void ChooseList()
@@ -40,13 +54,29 @@ public class HDO_Dialogues : MonoBehaviour
         {
             usedList = introduction;
         }
-        else if(sequence == 1)
+        else if (sequence == 1)
         {
             usedList = initialisation;
         }
-        else if(sequence == 2)
+        else if (sequence == 2)
         {
             usedList = espaceInvoqued;
+        }
+        else if (sequence == 3)
+        {
+            usedList = correctPentacle;
+        }
+        else if (sequence == 4)
+        {
+            usedList = ratedPentacle;
+        }
+        else if (sequence == 5)
+        {
+            usedList = zeGoodDemon;
+        }
+        else if (sequence == 6)
+        {
+            usedList = zeMocheDemon;
         }
     }
 
@@ -54,22 +84,28 @@ public class HDO_Dialogues : MonoBehaviour
     {
         if (sentenceNumber >= usedList.Count - 1)
         {
-            
-            sequence += 1;
+            if (sequence == 0)
+            {
+                sequence = 1;
+            }
+            else
+            {
+                shouldWrite = false;
+            }
             Debug.Log("samer");
             sentenceNumber = -1;
         }
 
         sentenceNumber += 1;
 
-        
 
-        if(sequence > numberOfSequences - 1)
+
+        if (sequence > numberOfSequences - 1)
         {
             sequence = 0;
             Debug.Log("no more dialogues");
         }
     }
 
-    
+
 }
