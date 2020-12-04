@@ -120,8 +120,18 @@ MonoBehaviour:
   - {fileID: 7030479625221608963}
   - {fileID: 3824005479952733547}
   - {fileID: 8496999317329142170}
-  objectsOrder: []
-  candlesOrder: []
+  objectsOrder:
+  - Cendres
+  - 
+  - Fleur
+  - Cendres
+  - 
+  candlesTagOrder:
+  - White Candle
+  - Red Candle
+  - Black Candle
+  - Green Candle
+  - Purple Candle
 --- !u!114 &6485694054310188046
 MonoBehaviour:
   m_ObjectHideFlags: 0
