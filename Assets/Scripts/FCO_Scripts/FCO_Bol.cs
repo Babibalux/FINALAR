@@ -11,6 +11,8 @@ public class FCO_Bol : MonoBehaviour
     {
         typeContenu.Add(type);
         etatContenu.Add(etat);
+
+        
     }
 
     public void TransferContent(List<FCO_ItemsScriptableObjects.IngredientType> destinationType, List<bool> destinationState)

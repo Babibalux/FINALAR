@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FCO_GlobalObjectScript : MonoBehaviour
 {
+    public GameObject trucdanlbolTEST;
+
     public FCO_ItemsScriptableObjects itemSO;
     public GameObject cendres;
     MeshRenderer renderer;
@@ -56,6 +58,11 @@ public class FCO_GlobalObjectScript : MonoBehaviour
                         touchedObject.GetComponent<FCO_Bol>().PutInTheBowl(itemSO.ingredientType, burned);
                         hand.inHandObject = null;
                         hand.playerHoldSomething = false;
+
+                        GameObject instantruc = Instantiate<GameObject>(trucdanlbolTEST, touchedObject.transform);
+                        instantruc.GetComponent<MeshFilter>().mesh = hand.inHandObject.GetComponent<MeshFilter>().mesh;
+                        instantruc.transform.position = Vector3.zero;
+
                         Destroy(this.gameObject);
                     }
                     break;
