@@ -18,6 +18,7 @@ TagManager:
   - RedCandle
   - GreenCandle
   - WhiteCandle
+  - DialogueManager
   layers:
   - Default
   - TransparentFX
