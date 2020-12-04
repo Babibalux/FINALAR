@@ -12,7 +12,7 @@ public class KF_ChangeScene : MonoBehaviour
 
     public void ChangeSceneGame()
     {
-        SceneManager.LoadScene("FusionQuiMarcheTropBien");
+        SceneManager.LoadScene("ELC_scene");
     }
 
 }
