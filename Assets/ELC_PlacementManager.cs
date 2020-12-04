@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ELC_PlacementManager : MonoBehaviour
 {
+    public ParticleSystem ps;
+
     private int verifiedObjects;
     private int verifiedCandles;
 
@@ -11,19 +13,37 @@ public class ELC_PlacementManager : MonoBehaviour
     public List<GameObject> candlesPlacements = new List<GameObject>(); //Nord, Est, Sud-Est, Sud-Ouest, Ouest
 
     public List<string> objectsOrder = new List<string>();
-    public List<string> candlesOrder = new List<string>();
+    public List<string> candlesTagOrder = new List<string>();
 
-    private void Start()
-    {
-        
-    }
 
     private void Update()
     {
+        verifiedCandles = 0;
+        verifiedObjects = 0;
+
         for (int i = 0; i < objectsPlacements.Count; i++)
         {
+            if (objectsPlacements[i].GetComponent<ELC_Emplacement>().objectPlaced != null && objectsOrder[i] != null)
+            {
+                if (objectsPlacements[i].GetComponent<ELC_Emplacement>().objectPlaced.GetComponent<FCO_ItemsScriptableObjects>().ingredientType.ToString() == objectsOrder[i]) verifiedObjects++;
+            }
 
+            if (candlesPlacements[i].GetComponent<ELC_Emplacement>().objectPlaced != null)
+            {
+                if (candlesTagOrder[i] == candlesPlacements[i].GetComponent<ELC_Emplacement>().objectPlaced.GetComponent<FCO_ItemsScriptableObjects>().ingredientType.ToString()) verifiedCandles++;
+            }
         }
+
+        if(verifiedCandles >= 5)
+        {
+            ps.Play();
+        }
+
+        if(verifiedObjects >= 3)
+        {
+            //Objets vérifiés
+        }
+
     }
 
 }
