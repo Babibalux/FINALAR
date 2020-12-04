@@ -19,6 +19,7 @@ TagManager:
   - GreenCandle
   - WhiteCandle
   - DialogueManager
+  - Book
   layers:
   - Default
   - TransparentFX
